@@ -47,6 +47,11 @@ public class Main {
             else if(yourChoice == 2){
                 dssv.inraDanhSach();
             }
+            else if(yourChoice == 3){
+                System.out.print("Nhập mã sinh viên cần xóa khỏi danh sách: ");
+                String maSVDelete = sc.nextLine();
+                dssv.xoaTenSinhVien(maSVDelete);
+            }
         } while(yourChoice != 0);
 
     }

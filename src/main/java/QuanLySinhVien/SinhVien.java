@@ -33,6 +33,10 @@ public class SinhVien {
         this.diemAnh = diemAnh;
     }
 
+    public String getMaSinhVien() {
+        return maSinhVien;
+    }
+
     @Override
     public String toString() {
         return  userID +

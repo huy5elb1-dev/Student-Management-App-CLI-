@@ -18,4 +18,14 @@ public class DanhSachSinhVien {
             System.out.println(sv);
         }
     }
+    //3.   Xóa một sinh viên ra khỏi danh sách theo mã sinh viên.
+    public void xoaTenSinhVien(String ma){
+        for(SinhVien sv : danhSach){
+            if(sv.getMaSinhVien().equals(ma)){
+                this.danhSach.remove(sv);
+                break;
+            }
+        }
+
+    }
 }
