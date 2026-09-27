@@ -48,4 +48,18 @@ public class DanhSachSinhVien {
             System.out.println(sv + " " + String.format("%.1f", sv.getDiemTB()));
         }
     }
+    //6.   Kiểm tra xem sinh viên đó tồn tại trong danh sách hay không.
+    public void check(String ma){
+         int check = 0;
+         for(SinhVien sv : danhSach){
+             if(sv.getMaSinhVien().equals(ma)){
+                 System.out.println("Kết quả tìm kiếm: " + sv);
+                 check = 1;
+                 break;
+             }
+         }
+         if(check == 0){
+             System.out.println("Kết quả tìm kiếm: Không tồn tại");
+         }
+    }
 }

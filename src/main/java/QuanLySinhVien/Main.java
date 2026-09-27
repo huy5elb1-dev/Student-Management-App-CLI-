@@ -60,6 +60,11 @@ public class Main {
             else if(yourChoice == 5){
                 dssv.sapXepTheoDiemTB();
             }
+            else if(yourChoice == 6){
+                System.out.print("Nhập mã sinh viên cần kiểm tra trong danh sách: ");
+                String maSV = sc.nextLine();
+                dssv.check(maSV);
+            }
         } while(yourChoice != 0);
 
     }
