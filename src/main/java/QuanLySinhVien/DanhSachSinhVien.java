@@ -1,6 +1,7 @@
 package QuanLySinhVien;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DanhSachSinhVien {
     public ArrayList<SinhVien> danhSach;
@@ -27,6 +28,7 @@ public class DanhSachSinhVien {
             }
         }
     }
+    //4.   Tìm kiếm các sinh viên có chung mã ngành (CN, AT, KT, DT).
     public void sinhVienTheoNganh(String s){
         String tmp = "";
         if(s.equals("Cong nghe thong tin")) tmp += "CN";
@@ -37,6 +39,13 @@ public class DanhSachSinhVien {
             if(sv.getMaLop().substring(5,7).equals(tmp)){
                 System.out.println(sv);
             }
+        }
+    }
+    //5.   Liệt kê danh sách sinh viên có điểm trung bình từ cao đến thấp.
+    public void sapXepTheoDiemTB(){
+        Collections.sort(danhSach);
+        for(SinhVien sv : danhSach){
+            System.out.println(sv + " " + String.format("%.1f", sv.getDiemTB()));
         }
     }
 }

@@ -57,6 +57,9 @@ public class Main {
                 String nhomNganh = sc.nextLine();
                 dssv.sinhVienTheoNganh(nhomNganh);
             }
+            else if(yourChoice == 5){
+                dssv.sapXepTheoDiemTB();
+            }
         } while(yourChoice != 0);
 
     }

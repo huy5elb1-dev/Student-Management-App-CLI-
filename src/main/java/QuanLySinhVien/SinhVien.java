@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SinhVien {
+public class SinhVien implements Comparable<SinhVien>{
     private String userID;
     private String hoTenSinhVien;
     private Date ngaySinh;
@@ -31,6 +31,7 @@ public class SinhVien {
         this.diemToan = diemToan;
         this.diemVan = diemVan;
         this.diemAnh = diemAnh;
+        this.diemTB = (float) (Math.round(((diemAnh + diemToan + diemVan) /3) * 100.0) / 100.0);
     }
 
     public String getMaSinhVien() {
@@ -40,6 +41,16 @@ public class SinhVien {
     public String getMaLop() {
         return maLop;
     }
+
+    public float getDiemTB() {
+        return diemTB;
+    }
+
+    @Override
+    public int compareTo(SinhVien o) {
+        return Float.compare(o.diemTB, this.diemTB);
+    }
+
 
     @Override
     public String toString() {
@@ -51,7 +62,7 @@ public class SinhVien {
                 " " + maLop +
                 " " + diemToan +
                 " " + diemVan +
-                " " + diemAnh +
-                " " + diemTB;
+                " " + diemAnh;
     }
+
 }
