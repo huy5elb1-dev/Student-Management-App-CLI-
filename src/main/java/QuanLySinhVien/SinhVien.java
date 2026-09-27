@@ -21,6 +21,7 @@ public class SinhVien {
     public SinhVien(String hoTenSinhVien, String ngaySinh, String gioiTinh,
                     String maSinhVien, String maLop,
                     float diemToan, float diemVan, float diemAnh) throws ParseException {
+        cnt++;
         this.userID = String.format("STT%03d", cnt);
         this.hoTenSinhVien = hoTenSinhVien;
         this.ngaySinh = (new SimpleDateFormat("dd/MM/yyyy")).parse(ngaySinh);
@@ -30,5 +31,19 @@ public class SinhVien {
         this.diemToan = diemToan;
         this.diemVan = diemVan;
         this.diemAnh = diemAnh;
+    }
+
+    @Override
+    public String toString() {
+        return  userID +
+                " "  + hoTenSinhVien +
+                " " + (new SimpleDateFormat("dd/MM/yyyy")).format(ngaySinh) +
+                " " + gioiTinh +
+                " " + maSinhVien +
+                " " + maLop +
+                " " + diemToan +
+                " " + diemVan +
+                " " + diemAnh +
+                " " + diemTB;
     }
 }

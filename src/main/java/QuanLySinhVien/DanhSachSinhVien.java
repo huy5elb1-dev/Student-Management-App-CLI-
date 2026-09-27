@@ -12,4 +12,10 @@ public class DanhSachSinhVien {
     public void themSinhVien(SinhVien sv){
         this.danhSach.add(sv);
     }
+    //2.   Liệt kê danh sách sinh viên đã tạo.
+    public void inraDanhSach(){
+        for(SinhVien sv : danhSach){
+            System.out.println(sv);
+        }
+    }
 }

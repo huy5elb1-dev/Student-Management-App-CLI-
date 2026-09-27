@@ -44,6 +44,9 @@ public class Main {
                 , diemToan, diemVan, diemAnh);
                 dssv.themSinhVien(sv);
             }
+            else if(yourChoice == 2){
+                dssv.inraDanhSach();
+            }
         } while(yourChoice != 0);
 
     }
