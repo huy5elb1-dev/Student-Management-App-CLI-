@@ -62,4 +62,24 @@ public class DanhSachSinhVien {
              System.out.println("Kết quả tìm kiếm: Không tồn tại");
          }
     }
+    // 7.   Đánh giá hạnh kiểm của một sinh viên theo mã sinh viên trong danh sách theo điểm TB.
+    public void danhGiaHanhKiem(){
+        for(SinhVien sv : danhSach){
+            if(sv.getDiemTB() >= 9){
+                System.out.println(sv + " " + sv.getDiemTB() + " Xuất sắc");
+            }
+            else if(sv.getDiemTB() >= 8){
+                System.out.println(sv + " " + sv.getDiemTB() + " Giỏi");
+            }
+            else if(sv.getDiemTB() >= 7.5){
+                System.out.println(sv + " " + sv.getDiemTB() + " Trung bình");
+            }
+            else if(sv.getDiemTB() >= 5){
+                System.out.println(sv + " " + sv.getDiemTB() + " Khá");
+            }
+            else{
+                System.out.println(sv + " " + sv.getDiemTB() + " Yếu");
+            }
+        }
+    }
 }

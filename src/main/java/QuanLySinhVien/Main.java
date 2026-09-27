@@ -65,6 +65,10 @@ public class Main {
                 String maSV = sc.nextLine();
                 dssv.check(maSV);
             }
+            else if(yourChoice == 7){
+                System.out.println("Kết quả hạnh kiểm sinh viên sau đánh giá: ");
+                dssv.danhGiaHanhKiem();
+            }
         } while(yourChoice != 0);
 
     }
