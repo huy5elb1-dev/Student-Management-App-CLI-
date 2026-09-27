@@ -1,12 +1,10 @@
 package QuanLySinhVien;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class DanhSachSinhVien {
     public ArrayList<SinhVien> danhSach;
-
+    LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
     public DanhSachSinhVien() {
         this.danhSach = new ArrayList<SinhVien>();
     }
@@ -100,6 +98,15 @@ public class DanhSachSinhVien {
     public void cungCapEmail(){
         for (SinhVien sv : danhSach){
             System.out.println(sv + " " + chuanhoa(sv.getHoTenSinhVien()));
+        }
+    }
+    // In ra số lượng sinh viên theo từng lớp học trong danh sách.
+    public void soLuongSinhVienTheoLop(){
+        for(SinhVien sv : danhSach){
+            map.put(sv.getMaLop(), map.getOrDefault(sv.getMaLop(), 0) + 1);
+        }
+        for(String x : map.keySet()){
+            System.out.println("Lớp " + x + " có tất cả " + map.get(x) + " sinh viên");
         }
     }
 }

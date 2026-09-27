@@ -72,6 +72,10 @@ public class Main {
                 System.out.println("Danh sách các tài khoản email của sinh viên PTIT: ");
                 dssv.cungCapEmail();
             }
+            else if (yourChoice == 9){
+                System.out.println("Danh sách số lượng sinh viên trong các lớp học: ");
+                dssv.soLuongSinhVienTheoLop();
+            }
         } while(yourChoice != 0);
 
     }
