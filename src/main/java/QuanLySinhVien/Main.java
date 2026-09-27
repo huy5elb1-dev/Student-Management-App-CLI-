@@ -1,15 +1,16 @@
 package QuanLySinhVien;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
     public Main() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
         int yourChoice = 0;
-
+        DanhSachSinhVien dssv = new DanhSachSinhVien();
         do {
             System.out.println("---------Welcom to Student Management PTIT S-Link!---------");
             System.out.println("     Please choose one of options below to continue:    ");
@@ -23,7 +24,26 @@ public class Main {
                     "8.   Sắp xếp thí sinh theo ngày sinh từ già đến trẻ.\n" +
                     "9.   Liệt kê danh sách email được cấp theo tên sinh viên. \n" +
                     "10.  In ra số lượng sinh viên theo từng lớp học trong danh sách.");
-            yourChoice = sc.nextInt();
+            yourChoice =Integer.parseInt(sc.nextLine());
+            if(yourChoice == 1){
+                System.out.print("Nhập Họ và tên: ");
+                String hoTenSinhVien = sc.nextLine();
+                System.out.print("Ngày sinh chuẩn dd/MM/yyyy: ");
+                String ngaySinh = sc.nextLine();
+                System.out.print("Giới tính: ");
+                String gioiTinh = sc.nextLine();
+                System.out.print("Mã sinh viên: ");
+                String maSinhVien = sc.nextLine();
+                System.out.print("Mã lớp sinh viên: ");
+                String maLop = sc.nextLine();
+                System.out.println("Điểm các môn học: ");
+                float diemToan = Float.parseFloat(sc.nextLine());
+                float diemVan = Float.parseFloat(sc.nextLine());
+                float diemAnh = Float.parseFloat(sc.nextLine());
+                SinhVien sv = new SinhVien(hoTenSinhVien, ngaySinh, gioiTinh, maSinhVien, maLop
+                , diemToan, diemVan, diemAnh);
+                dssv.themSinhVien(sv);
+            }
         } while(yourChoice != 0);
 
     }

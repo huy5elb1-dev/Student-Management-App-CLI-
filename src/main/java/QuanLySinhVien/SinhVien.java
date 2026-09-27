@@ -1,5 +1,7 @@
 package QuanLySinhVien;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SinhVien {
@@ -16,9 +18,12 @@ public class SinhVien {
     private String email;
     public static int cnt = 0;
 
-    public SinhVien(String hoTenSinhVien, Date ngaySinh, String gioiTinh, String maSinhVien, String maLop, float diemToan, float diemVan, float diemAnh) {
+    public SinhVien(String hoTenSinhVien, String ngaySinh, String gioiTinh,
+                    String maSinhVien, String maLop,
+                    float diemToan, float diemVan, float diemAnh) throws ParseException {
+        this.userID = String.format("STT%03d", cnt);
         this.hoTenSinhVien = hoTenSinhVien;
-        this.ngaySinh = ngaySinh;
+        this.ngaySinh = (new SimpleDateFormat("dd/MM/yyyy")).parse(ngaySinh);
         this.gioiTinh = gioiTinh;
         this.maSinhVien = maSinhVien;
         this.maLop = maLop;
