@@ -26,6 +26,17 @@ public class DanhSachSinhVien {
                 break;
             }
         }
-
+    }
+    public void sinhVienTheoNganh(String s){
+        String tmp = "";
+        if(s.equals("Cong nghe thong tin")) tmp += "CN";
+        else if(s.equals("An toan thong tin")) tmp += "AT";
+        else if(s.equals("Ke toan")) tmp += "KT";
+        else if(s.equals("Dien tu")) tmp += "DT";
+        for (SinhVien sv : danhSach){
+            if(sv.getMaLop().substring(5,7).equals(tmp)){
+                System.out.println(sv);
+            }
+        }
     }
 }

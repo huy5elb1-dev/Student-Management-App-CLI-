@@ -17,7 +17,7 @@ public class Main {
             System.out.println("1.   Thêm mới một sinh viên vào danh sách.\n" +
                     "2.   Liệt kê danh sách sinh viên đã tạo.\n" +
                     "3.   Xóa một sinh viên ra khỏi danh sách theo mã sinh viên.\n" +
-                    "4.   Tìm kiếm các sinh viên có chung mã ngành.\n" +
+                    "4.   Tìm kiếm các sinh viên có chung mã ngành (CN, AT, KT, DT).\n" +
                     "5.   Liệt kê danh sách sinh viên có điểm trung bình từ cao đến thấp.\n" +
                     "6.   Kiểm tra xem sinh viên đó tồn tại trong danh sách hay không.\n" +
                     "7.   Đánh giá hạnh kiểm của một sinh viên theo mã sinh viên trong danh sách theo điểm TB.\n" +
@@ -51,6 +51,11 @@ public class Main {
                 System.out.print("Nhập mã sinh viên cần xóa khỏi danh sách: ");
                 String maSVDelete = sc.nextLine();
                 dssv.xoaTenSinhVien(maSVDelete);
+            }
+            else if(yourChoice == 4){
+                System.out.print("Nhập tên nhóm Ngành mà bạn cần tìm kiếm: ");
+                String nhomNganh = sc.nextLine();
+                dssv.sinhVienTheoNganh(nhomNganh);
             }
         } while(yourChoice != 0);
 

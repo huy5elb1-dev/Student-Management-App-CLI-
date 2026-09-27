@@ -37,6 +37,10 @@ public class SinhVien {
         return maSinhVien;
     }
 
+    public String getMaLop() {
+        return maLop;
+    }
+
     @Override
     public String toString() {
         return  userID +
