@@ -35,6 +35,10 @@ public class SinhVien implements Comparable<SinhVien>{
         this.diemTB = (float) (Math.round(((diemAnh + diemToan + diemVan) /3) * 100.0) / 100.0);
     }
 
+    public String getHoTenSinhVien() {
+        return hoTenSinhVien;
+    }
+
     public String getMaSinhVien() {
         return maSinhVien;
     }

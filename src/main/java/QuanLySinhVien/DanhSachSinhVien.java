@@ -2,6 +2,7 @@ package QuanLySinhVien;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.StringTokenizer;
 
 public class DanhSachSinhVien {
     public ArrayList<SinhVien> danhSach;
@@ -80,6 +81,25 @@ public class DanhSachSinhVien {
             else{
                 System.out.println(sv + " " + sv.getDiemTB() + " Yếu");
             }
+        }
+    }
+    // 8.   Liệt kê danh sách email được cấp theo tên sinh viên.
+    public static String chuanhoa(String s){
+        StringBuilder ac = new StringBuilder();
+        StringTokenizer res = new StringTokenizer(s);
+        while(res.hasMoreTokens()){
+            String tmp = res.nextToken();
+            if(res.hasMoreTokens()){
+                ac.append(Character.toUpperCase(tmp.charAt(0)));
+            }
+            else ac.insert(0, tmp);
+        }
+        ac.append("@ptit.edu.vn");
+        return ac.toString().trim();
+    }
+    public void cungCapEmail(){
+        for (SinhVien sv : danhSach){
+            System.out.println(sv + " " + chuanhoa(sv.getHoTenSinhVien()));
         }
     }
 }
